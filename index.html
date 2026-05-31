@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>산업체특강 과제 — 특강 후기 & AI 전시회 방문기</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+KR:wght@300;400;500;600;700&family=Space+Mono:wght@400;700&family=Noto+Serif+KR:wght@400;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#0b0c10;--panel:#151823;--text:#e8e9ee;--dim:#9a9db0;--line:#262a38;
+    --aws:#ff9900;--wis:#00e0b8;--blue:#5b8cff;--amber:#fbbf24;
+  }
+  *{margin:0;padding:0;box-sizing:border-box;}
+  body{font-family:'IBM Plex Sans KR',sans-serif;background:var(--bg);color:var(--text);
+    line-height:1.8;-webkit-font-smoothing:antialiased;min-height:100vh;}
+  .wrap{max-width:860px;margin:0 auto;padding:0 26px;}
+
+  header{position:relative;padding:96px 0 60px;overflow:hidden;
+    background:radial-gradient(circle at 18% 15%,rgba(91,140,255,.14),transparent 42%),
+              radial-gradient(circle at 85% 80%,rgba(0,224,184,.12),transparent 45%),
+              linear-gradient(180deg,#0b0c10,#0e1018);}
+  header::after{content:"";position:absolute;inset:0;opacity:.45;
+    background-image:linear-gradient(var(--line) 1px,transparent 1px),linear-gradient(90deg,var(--line) 1px,transparent 1px);
+    background-size:46px 46px;
+    -webkit-mask-image:radial-gradient(circle at 50% 0%,#000,transparent 72%);
+            mask-image:radial-gradient(circle at 50% 0%,#000,transparent 72%);}
+  header .wrap{position:relative;z-index:1;}
+  .badge{display:inline-block;font-family:'Space Mono',monospace;font-size:.7rem;
+    letter-spacing:.2em;text-transform:uppercase;border:1px solid var(--blue);color:var(--blue);
+    padding:6px 14px;border-radius:30px;margin-bottom:24px;}
+  h1{font-weight:700;font-size:2.5rem;line-height:1.25;letter-spacing:-.02em;margin-bottom:16px;}
+  h1 .g{background:linear-gradient(90deg,var(--aws),var(--wis));-webkit-background-clip:text;
+    background-clip:text;color:transparent;}
+  .sub{font-family:'Noto Serif KR',serif;font-size:1.02rem;color:var(--dim);font-style:italic;max-width:580px;}
+
+  main{padding:50px 0 90px;}
+  .section-label{font-family:'Space Mono',monospace;font-size:.74rem;letter-spacing:.16em;
+    text-transform:uppercase;color:var(--dim);margin:38px 0 16px;display:flex;align-items:center;gap:12px;}
+  .section-label::after{content:"";flex:1;height:1px;background:var(--line);}
+  .cards{display:grid;gap:18px;}
+  a.card{display:block;text-decoration:none;color:inherit;background:var(--panel);
+    border:1px solid var(--line);border-radius:14px;padding:26px 30px;
+    transition:border-color .25s,transform .25s,box-shadow .25s;position:relative;overflow:hidden;}
+  a.card::before{content:"";position:absolute;left:0;top:0;bottom:0;width:4px;background:var(--accent);}
+  a.card:hover{transform:translateY(-3px);border-color:var(--accent);box-shadow:0 12px 36px rgba(0,0,0,.4);}
+  a.card.aws{--accent:var(--aws);}
+  a.card.wis{--accent:var(--wis);}
+  a.card.dev{--accent:var(--blue);}
+  a.card.ovs{--accent:var(--amber);}
+  .kind{font-family:'Space Mono',monospace;font-size:.68rem;letter-spacing:.14em;
+    text-transform:uppercase;color:var(--accent);margin-bottom:10px;}
+  .card h2{font-size:1.32rem;font-weight:700;letter-spacing:-.01em;margin-bottom:8px;}
+  .card p{font-size:.95rem;color:var(--dim);font-weight:300;margin-bottom:14px;}
+  .card .meta{display:flex;flex-wrap:wrap;gap:8px;}
+  .chip{font-family:'Space Mono',monospace;font-size:.72rem;background:rgba(255,255,255,.04);
+    border:1px solid var(--line);padding:5px 11px;border-radius:8px;color:var(--text);}
+  .go{margin-top:16px;font-family:'Space Mono',monospace;font-size:.8rem;color:var(--accent);
+    display:inline-flex;align-items:center;gap:6px;}
+  a.card:hover .go{gap:12px;}
+
+  footer{border-top:1px solid var(--line);padding:36px 0 60px;font-size:.85rem;color:var(--dim);}
+  @media(max-width:600px){h1{font-size:1.85rem;}a.card{padding:22px;}}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap">
+    <span class="badge">산업체특강 · 2026</span>
+    <h1>특강 후기 &amp; <span class="g">AI 전시회</span> 방문기</h1>
+    <p class="sub">산업체특강 과제 모음 — 동문 초청 특강 두 편과 국내 최대 AI·ICT 행사 두 곳의 방문기.</p>
+  </div>
+</header>
+
+<main>
+<div class="wrap">
+
+  <div class="section-label">특강 감상문</div>
+  <div class="cards">
+    <a class="card dev" href="lecture-ai-developer.html">
+      <div class="kind">Guest Lecture · Career</div>
+      <h2>AI가 코드를 다 짜는 시대, 개발자는 무엇으로 살아남는가</h2>
+      <p>베어로보틱스 현직 엔지니어(국민대 동문)가 들려준 AI 시대 개발자 생존 전략과 취업 준비.</p>
+      <div class="meta">
+        <span class="chip">CS 기초</span>
+        <span class="chip">문제 해결 스토리</span>
+        <span class="chip">면접</span>
+      </div>
+      <div class="go">후기 읽기 →</div>
+    </a>
+    <a class="card ovs" href="lecture-overseas.html">
+      <div class="kind">Guest Lecture · Overseas</div>
+      <h2>운칠기삼, 범부가 사는 방법</h2>
+      <p>한국 SI 5년에서 독일 핀테크로. 박종한 동문이 들려준 해외취업의 솔직한 확률게임.</p>
+      <div class="meta">
+        <span class="chip">해외취업</span>
+        <span class="chip">운칠기삼</span>
+        <span class="chip">참호전</span>
+      </div>
+      <div class="go">후기 읽기 →</div>
+    </a>
+  </div>
+
+  <div class="section-label">AI 전시회 방문기</div>
+  <div class="cards">
+    <a class="card aws" href="aws-summit-seoul-2026.html">
+      <div class="kind">Cloud · AI Conference</div>
+      <h2>AWS Summit Seoul 2026</h2>
+      <p>클라우드를 넘어 "스스로 일하는 AI"로 — 에이전틱 AI가 이끄는 다음 20년의 방향성.</p>
+      <div class="meta">
+        <span class="chip">📅 05.20–21</span>
+        <span class="chip">📍 코엑스 컨벤션 센터</span>
+        <span class="chip">🎟 12회차</span>
+      </div>
+      <div class="go">방문기 읽기 →</div>
+    </a>
+    <a class="card wis" href="world-it-show-2026.html">
+      <div class="kind">ICT · AI Exhibition</div>
+      <h2>2026 월드IT쇼 (WIS)</h2>
+      <p>"생각을 넘어 행동으로: AI, 현실을 움직이다" — 반도체부터 피지컬 AI까지.</p>
+      <div class="meta">
+        <span class="chip">📅 04.22–24</span>
+        <span class="chip">📍 코엑스 A·B·C홀</span>
+        <span class="chip">🏆 제18회</span>
+      </div>
+      <div class="go">방문기 읽기 →</div>
+    </a>
+  </div>
+
+</div>
+</main>
+
+<footer>
+  <div class="wrap">산업체특강 과제 · 2026 — Se-Yeong712</div>
+</footer>
+
+</body>
+</html>
