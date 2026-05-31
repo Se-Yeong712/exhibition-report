@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>2026 월드IT쇼(WIS) 방문기</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@400;600;700&family=Pretendard:wght@300;400;500;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#0b0c10;
+    --bg2:#12141c;
+    --panel:#171922;
+    --text:#e8e9ee;
+    --dim:#9a9db0;
+    --line:#262a38;
+    --wis1:#00e0b8;
+    --wis2:#5b8cff;
+    --wis3:#ff5d8f;
+  }
+  *{margin:0;padding:0;box-sizing:border-box;}
+  body{
+    font-family:'Pretendard','Noto Serif KR',sans-serif;
+    background:var(--bg);color:var(--text);line-height:1.85;
+    -webkit-font-smoothing:antialiased;
+  }
+  .wrap{max-width:780px;margin:0 auto;padding:0 26px;}
+  .back{display:inline-block;margin-bottom:24px;font-family:'Space Mono',monospace;
+    font-size:.78rem;color:var(--wis1);text-decoration:none;}
+  .back:hover{text-decoration:underline;}
+
+  header.hero{
+    position:relative;padding:96px 0 78px;overflow:hidden;
+    background:
+      radial-gradient(circle at 18% 12%,rgba(0,224,184,.16),transparent 42%),
+      radial-gradient(circle at 88% 78%,rgba(91,140,255,.18),transparent 45%),
+      linear-gradient(180deg,#0b0c10,#0e1018);
+  }
+  header.hero::after{
+    content:"";position:absolute;inset:0;opacity:.5;
+    background-image:linear-gradient(var(--line) 1px,transparent 1px),
+                     linear-gradient(90deg,var(--line) 1px,transparent 1px);
+    background-size:46px 46px;
+    -webkit-mask-image:radial-gradient(circle at 50% 0%,#000,transparent 75%);
+            mask-image:radial-gradient(circle at 50% 0%,#000,transparent 75%);
+  }
+  .hero .wrap{position:relative;z-index:1;}
+  .badge{
+    display:inline-block;font-family:'Space Mono',monospace;font-size:.7rem;
+    letter-spacing:.2em;text-transform:uppercase;
+    border:1px solid var(--wis1);color:var(--wis1);
+    padding:6px 14px;border-radius:30px;margin-bottom:26px;
+  }
+  .hero h1{
+    font-weight:700;font-size:2.7rem;line-height:1.25;letter-spacing:-.02em;
+    margin-bottom:20px;
+  }
+  .hero h1 .g{
+    background:linear-gradient(90deg,var(--wis1),var(--wis2));
+    -webkit-background-clip:text;background-clip:text;color:transparent;
+  }
+  .hero .slogan{
+    font-family:'Noto Serif KR',serif;font-size:1.05rem;color:var(--dim);
+    font-style:italic;max-width:560px;
+  }
+  .meta{
+    margin-top:38px;display:flex;flex-wrap:wrap;gap:12px;
+  }
+  .chip{
+    font-family:'Space Mono',monospace;font-size:.78rem;
+    background:var(--panel);border:1px solid var(--line);
+    padding:8px 14px;border-radius:8px;color:var(--text);
+  }
+  .chip b{color:var(--wis1);}
+
+  main{padding:62px 0 30px;}
+  .lead{
+    font-family:'Noto Serif KR',serif;font-size:1.16rem;line-height:1.95;
+    color:#d6d8e2;border-left:3px solid var(--wis1);
+    padding:8px 0 8px 24px;margin-bottom:52px;
+  }
+  h2{
+    font-size:1.5rem;font-weight:700;letter-spacing:-.01em;margin:58px 0 18px;
+    display:flex;align-items:baseline;gap:12px;
+  }
+  h2 .num{font-family:'Space Mono',monospace;font-size:.85rem;color:var(--wis2);}
+  h2::after{content:"";flex:1;height:1px;background:var(--line);align-self:center;}
+  h3{font-size:1.12rem;font-weight:600;margin:30px 0 10px;color:var(--wis1);}
+  p{margin-bottom:18px;font-weight:300;font-size:1.02rem;color:#c7c9d4;}
+  p strong{font-weight:600;color:#fff;}
+
+  ul.clean{list-style:none;margin:18px 0 24px;}
+  ul.clean li{position:relative;padding-left:26px;margin-bottom:12px;font-weight:300;color:#c7c9d4;}
+  ul.clean li::before{content:"◆";position:absolute;left:0;color:var(--wis2);font-size:.75rem;top:2px;}
+
+  .pavilions{display:grid;gap:14px;margin:26px 0 38px;}
+  .pav{
+    background:var(--panel);border:1px solid var(--line);border-radius:12px;
+    padding:20px 22px;transition:border-color .2s,transform .2s;
+  }
+  .pav:hover{border-color:var(--wis1);transform:translateX(4px);}
+  .pav .pt{font-family:'Space Mono',monospace;font-size:.7rem;letter-spacing:.12em;color:var(--wis3);margin-bottom:6px;text-transform:uppercase;}
+  .pav h4{font-size:1.05rem;font-weight:600;margin-bottom:6px;color:#fff;}
+  .pav p{margin:0;font-size:.94rem;color:var(--dim);font-weight:300;}
+
+  .factbox{
+    background:linear-gradient(135deg,var(--panel),var(--bg2));
+    border:1px solid var(--line);border-radius:14px;padding:28px;margin:30px 0 42px;
+  }
+  .factbox h4{font-family:'Space Mono',monospace;font-size:.72rem;letter-spacing:.18em;
+    text-transform:uppercase;color:var(--wis1);margin-bottom:18px;}
+  .factgrid{display:grid;grid-template-columns:110px 1fr;gap:12px 18px;font-size:.96rem;}
+  .factgrid dt{font-weight:600;color:#fff;}
+  .factgrid dd{font-weight:300;color:var(--dim);}
+
+  .stats{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin:30px 0 40px;}
+  .stat{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:22px 16px;text-align:center;}
+  .stat .v{font-family:'Space Mono',monospace;font-size:1.9rem;font-weight:700;
+    background:linear-gradient(90deg,var(--wis1),var(--wis2));
+    -webkit-background-clip:text;background-clip:text;color:transparent;}
+  .stat .l{font-size:.8rem;color:var(--dim);margin-top:4px;}
+
+  blockquote{
+    font-family:'Noto Serif KR',serif;font-size:1.12rem;font-style:italic;
+    color:#fff;margin:34px 0;padding:0 0 0 22px;border-left:3px solid var(--wis3);line-height:1.8;
+  }
+
+  .tag{display:inline-block;font-family:'Space Mono',monospace;font-size:.72rem;
+    padding:4px 11px;border-radius:20px;border:1px solid var(--line);
+    color:var(--wis1);margin:0 6px 8px 0;}
+
+  footer{border-top:1px solid var(--line);padding:42px 0 72px;font-size:.85rem;color:var(--dim);}
+  footer .wrap{display:flex;flex-direction:column;gap:8px;}
+  .src{font-family:'Space Mono',monospace;font-size:.74rem;line-height:1.8;color:#7d8094;}
+
+  @media(max-width:600px){
+    .hero h1{font-size:2rem;}
+    .factgrid{grid-template-columns:84px 1fr;}
+    .stats{grid-template-columns:1fr;}
+  }
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <div class="wrap">
+    <a class="back" href="index.html">← 목록으로</a>
+    <span class="badge">World IT Show · 2026</span>
+    <h1>"생각을 넘어 <span class="g">행동으로</span>",<br>AI가 현실을 움직인 사흘</h1>
+    <p class="slogan">17개국 460개사, 1,400여 부스가 모인 국내 최대 ICT 전시회 — 2026 월드IT쇼 방문기</p>
+    <div class="meta">
+      <span class="chip">📅 <b>2026.04.22–24</b></span>
+      <span class="chip">📍 <b>코엑스 A·B·C홀</b></span>
+      <span class="chip">🏆 <b>제18회</b></span>
+    </div>
+  </div>
+</header>
+
+<main>
+<div class="wrap">
+
+  <p class="lead">올해 월드IT쇼의 슬로건은 "생각을 넘어 행동으로: AI, 현실을 움직이다"였다. 그 문장처럼, 전시장은 더 이상 'AI가 무엇인가'를 설명하는 곳이 아니라 'AI가 무엇을 해내는가'를 직접 보여주는 공간이었다. 반도체부터 로봇까지, 추상적 개념이 손에 잡히는 제품으로 내려와 있었다.</p>
+
+  <h2><span class="num">01</span> 행사 개요</h2>
+  <p>2026 월드IT쇼(WIS 2026)는 과학기술정보통신부가 주최하고 한국무역협회 등이 주관한 국내 최대 규모의 AI·ICT 전시회다. 4월 22일부터 24일까지 사흘간 코엑스 A·B·C홀에서 열렸으며, 올해로 18회째를 맞았다. 단순 기술 전시를 넘어 국내외 기업 간 기술 교류와 사업 협력, 실질적 수출 성과를 만들어내는 비즈니스 허브 역할을 표방한 점이 특징이다.</p>
+
+  <div class="stats">
+    <div class="stat"><div class="v">17</div><div class="l">참가국</div></div>
+    <div class="stat"><div class="v">460</div><div class="l">참가 기업</div></div>
+    <div class="stat"><div class="v">1,400</div><div class="l">전시 부스</div></div>
+  </div>
+
+  <div class="factbox">
+    <h4>Event Snapshot</h4>
+    <dl class="factgrid">
+      <dt>일시</dt><dd>2026년 4월 22일(수)–24일(금), 10:00–17:00</dd>
+      <dt>장소</dt><dd>코엑스 A·B·C홀 (서울 강남구)</dd>
+      <dt>규모</dt><dd>17개국 460개사, 7,500평·1,400여 부스</dd>
+      <dt>주최</dt><dd>과학기술정보통신부 / 주관 한국무역협회 등</dd>
+      <dt>전시 품목</dt><dd>AI·AX, 디지털트윈·메타버스, 스마트리빙·헬스케어, 로보틱스, 지능형 모빌리티, 블록체인·보안, 양자정보기술</dd>
+    </dl>
+  </div>
+
+  <h2><span class="num">02</span> 올해의 변화 — 특별전시관</h2>
+  <p>올해 WIS에서 가장 눈에 띈 변화는 신설 특별전시관이었다. 그중에서도 <strong>'K-AI반도체 생태계관'</strong>이 단연 화제의 중심이었다.</p>
+
+  <div class="pavilions">
+    <div class="pav">
+      <div class="pt">New · Special Pavilion</div>
+      <h4>K-AI반도체 생태계관</h4>
+      <p>대한민국 AI 산업의 핵심 인프라인 반도체 기술과 K-AI 역량을 한자리에 모았다. 생성형 AI, 온디바이스 AI, AI 에이전트 플랫폼 등 반도체 기반 솔루션과 국내 유망 기업의 기술력을 집중 조명했다.</p>
+    </div>
+    <div class="pav">
+      <div class="pt">Award</div>
+      <h4>어워드테크관</h4>
+      <p>CES 혁신상 수상 기업과 과기정통부 정부시상 수상 기업 21곳이 A홀에 부스를 꾸렸다. "검증된 혁신"만 모아둔 코너라 동선을 효율적으로 짜기 좋았다.</p>
+    </div>
+    <div class="pav">
+      <div class="pt">Global</div>
+      <h4>글로벌관</h4>
+      <p>미국·캐나다·독일·영국·프랑스·일본·베트남·튀르키예 등 해외 기업이 참여해, 아시아를 넘어 북미·유럽까지 아우르는 글로벌 행사로 발돋움한 모습을 확인할 수 있었다.</p>
+    </div>
+    <div class="pav">
+      <div class="pt">Culture</div>
+      <h4>K-엔터테크관</h4>
+      <p>엔터테인먼트와 기술이 만나는 지점을 보여준 공간. K-콘텐츠와 ICT가 결합한 사례들이 흥미로웠다.</p>
+    </div>
+  </div>
+
+  <h2><span class="num">03</span> 가장 인상 깊었던 키워드 — 피지컬 AI</h2>
+  <p>이번 전시를 관통한 또 하나의 흐름은 <strong>피지컬 AI(Physical AI)</strong>였다. 화면 속에 머무르던 AI가 로봇·자율시스템·공간지능의 형태로 현실 세계와 직접 상호작용하는 단계로 넘어가고 있다는 것을, 부스를 돌며 체감했다.</p>
+  <p>부대행사로 열린 'K-피지컬AI 라운드테이블'에서는 과기정통부 주요 인사가 참여해 피지컬 AI 기반의 K-AI 혁신 기술 동향과 산업·국가 경쟁력을 논의했다. 전시 슬로건 "생각을 넘어 행동으로"가 가장 직관적으로 구현된 영역이 바로 이 피지컬 AI였다고 생각한다.</p>
+
+  <blockquote>로봇이 단순히 정해진 동작을 반복하는 게 아니라, 공간을 인식하고 상황에 맞춰 판단하는 모습을 보면서 'AI가 몸을 갖기 시작했다'는 표현이 과장이 아님을 느꼈다.</blockquote>
+
+  <h2><span class="num">04</span> 비즈니스 허브로서의 WIS</h2>
+  <p>WIS가 인상 깊었던 또 다른 이유는, 전시를 넘어선 '거래의 장'이라는 점이었다.</p>
+  <ul class="clean">
+    <li>지난해 수출상담회에서는 약 680건의 상담, 2억 2,800만 달러 규모의 거래 상담이 이뤄졌고 상당수가 실제 계약으로 이어졌다.</li>
+    <li>둘째 날에는 사우디·프랑스·영국·중국 등 57개국 주한 외교관 83명이 참석해 특별관을 순회하며 국내 기업 기술을 직접 체험했다.</li>
+    <li>글로벌 빅바이어 초청 수출상담회와 'AX: 사람을 이해하는 기술'을 주제로 한 글로벌 ICT 전망 콘퍼런스가 동시에 진행됐다.</li>
+  </ul>
+
+  <h2><span class="num">05</span> 다녀와서 — 정리하며</h2>
+  <p>2026 월드IT쇼를 한마디로 정리하면, <strong>"AI가 반도체(인프라)에서 출발해 로봇(현실)으로 도착하는 전 과정을 한 공간에서 본 경험"</strong>이었다. K-AI반도체 생태계관에서 기반 기술을 보고, 피지컬 AI 부스에서 그 기술이 현실에 닿는 모습을 확인하는 동선은 그 자체로 하나의 서사처럼 느껴졌다.</p>
+  <p>특히 국내 기술이 어워드테크관·글로벌관을 통해 해외 시장과 직접 연결되는 구조를 보면서, WIS가 왜 '비즈니스 허브'를 표방하는지 납득이 됐다. 내년에는 올해 본 피지컬 AI 기술들이 얼마나 더 상용화 단계로 나아갔을지 비교하며 다시 찾고 싶다.</p>
+
+  <div style="margin-top:34px;">
+    <span class="tag">#월드IT쇼</span>
+    <span class="tag">#WIS2026</span>
+    <span class="tag">#피지컬AI</span>
+    <span class="tag">#KAI반도체</span>
+    <span class="tag">#코엑스</span>
+    <span class="tag">#AI전시회방문기</span>
+  </div>
+
+</div>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div>AI 전시회 방문기 — 2026 월드IT쇼(WIS)</div>
+    <div class="src">
+      참고 자료 ·<br>
+      월드IT쇼 공식 홈페이지 (worlditshow.co.kr) · 코엑스 전시 안내 (coex.co.kr)<br>
+      헤럴드경제, "과기정통부, '2026 월드IT쇼'서 K-AI반도체 생태계관·4개 신규 부대행사 첫 선" (2026.04.14)<br>
+      전자신문, "[미리보는 WIS 2026] 17개국 460개사 참가…글로벌 AI·ICT 비즈니스 허브 도약" (2026.04.16)
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
